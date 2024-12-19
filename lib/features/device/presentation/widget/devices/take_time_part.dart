@@ -18,7 +18,7 @@ class TakeTimeWidget extends StatelessWidget {
       MainAxisAlignment.spaceBetween,
       children: [
         const Text(
-          'زمانی انتخاب نشده است',
+          'No time selected',
           style: AppStyles.style4,
         ),
         Row(

@@ -36,12 +36,12 @@ class CreateProjectDialog extends StatelessWidget {
           Column(
             children: [
               TextFieldBox(
-                title: 'نام پروژه',
+                title: 'Project name',
                 height: width > 600 ? height/6 : height / 12,
                 controller: Get.find<ProjectController>().projectName,
               ),
               TextFieldBox(
-                title: 'آدرس پروژه',
+                title: 'Project address',
                 height: width > 600 ? height/6 : height / 12,
                 controller: Get.find<ProjectController>().projectAddress,
               ),
@@ -50,7 +50,7 @@ class CreateProjectDialog extends StatelessWidget {
               ),
               CustomButton(
                 onClick: onSaveClicked,
-                buttonTitle: isEditMode ? 'ویرایش' : 'ذخیره',
+                buttonTitle: isEditMode ? 'Edit' : 'Save',
                 loading: loading,
               )
             ],

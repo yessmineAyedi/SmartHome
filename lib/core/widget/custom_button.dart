@@ -8,7 +8,7 @@ class CustomButton extends StatelessWidget {
   bool loading;
 
   CustomButton({
-    this.buttonTitle = 'ذخیره',
+    this.buttonTitle = 'Save',
     required this.onClick,
     this.loading = false,
     Key? key,

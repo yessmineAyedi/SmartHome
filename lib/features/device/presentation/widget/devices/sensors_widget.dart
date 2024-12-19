@@ -30,12 +30,12 @@ class SensorWidget extends StatelessWidget {
             ),
             Text(
               type == '1'
-                  ? 'سنسور دما'
+                  ? 'Temperature sensor'
                   : type == '2'
-                      ? 'سنسور رطوبت'
+                      ? 'Humidity sensor'
                       : type == '3'
-                          ? 'سنسور گاز'
-                          : 'سنسور خاک',
+                          ? 'Gas sensor'
+                          : ' soil sensor',
               style: AppStyles.style1,
             ),
             SvgPicture.asset(

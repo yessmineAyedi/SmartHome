@@ -50,7 +50,7 @@ createBottomSheet(BuildContext context) {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('زمان روشن'),
+                            const Text('Turn-on time'),
                             ElevatedButton(
                               onPressed: () {
                                 takeDateTimeDialog(context, true);
@@ -60,7 +60,7 @@ createBottomSheet(BuildContext context) {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15))),
                               child: const Text(
-                                'انتخاب زمان',
+                                'Select time',
                                 style: AppStyles.style10,
                               ),
                             ),
@@ -72,7 +72,7 @@ createBottomSheet(BuildContext context) {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text('زمان خاموش'),
+                            const Text('Turn-off time'),
                             ElevatedButton(
                               onPressed: () {
                                 takeDateTimeDialog(context, false);
@@ -82,7 +82,7 @@ createBottomSheet(BuildContext context) {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15))),
                               child: const Text(
-                                'انتخاب زمان',
+                                ' Select time',
                                 style: AppStyles.style10,
                               ),
                             ),
@@ -99,7 +99,7 @@ createBottomSheet(BuildContext context) {
                       alignment: Alignment.bottomCenter,
                       child: CustomButton(
                         onClick: () {},
-                        buttonTitle: 'ثبت',
+                        buttonTitle: 'Save',
                       ),
                     )
                   ],

@@ -42,7 +42,7 @@ class AuthRepositoryImpl extends AuthRepository {
         UserEntity userEntity = LoginResponse.fromJson(response.data);
         return DataSuccess(userEntity);
       } else if (response.statusCode == 400) {
-        return const DataFailed('نام کاربری یا رمز عبور اشتباه است');
+        return const DataFailed('The username or password is incorrect');
       } else {
         return DataFailed(response.statusCode);
       }

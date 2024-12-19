@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:turkeysh_smart_home/core/constants/colors.dart';
 import 'package:turkeysh_smart_home/core/constants/styles.dart';
 
-
 class CustomListWidget extends StatelessWidget {
   String title;
   String content;
 
   CustomListWidget(
-      {this.title = 'عنوان',
-        this.content = 'جزئیات',
+      {this.title = 'Title',
+        this.content = 'Details',
         required this.onDeleteClicked,
         required this.onEditClicked,
         required this.onNodeClicked,
@@ -64,22 +63,22 @@ class CustomListWidget extends StatelessWidget {
                   Column(
                     children: [
                       IconButton(onPressed: onEditClicked, icon: Icon(Icons.edit, color: CustomColors.foregroundColor)),
-                      const Text('ویرایش', style: AppStyles.style7,),
+                      const Text('Edit', style: AppStyles.style7,),
                       const SizedBox(width: 8,),
                     ],
                   ),
 
                   Column(
                     children: [
-                      IconButton(onPressed: onDeleteClicked, icon: Icon(Icons.delete, color: CustomColors.foregroundColor,), ),
-                      const Text('حذف', style: AppStyles.style7,),
+                      IconButton(onPressed: onDeleteClicked, icon: Icon(Icons.delete, color: CustomColors.foregroundColor,)),
+                      const Text('Delete', style: AppStyles.style7,),
                     ],
                   ),
 
                   Column(
                     children: [
                       IconButton(onPressed: onNodeClicked, icon: Icon(Icons.dashboard, color: CustomColors.foregroundColor,)),
-                      const Text('مشاهده نود ها', style: AppStyles.style7,),
+                      const Text('View Nodes', style: AppStyles.style7,),
                     ],
                   ),
 

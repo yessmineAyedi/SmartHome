@@ -79,7 +79,7 @@ class RegisterScreen extends StatelessWidget {
               height: 20,
             ),
             LoginEditText(
-              hint: 'نام کاربری',
+              hint: 'Username',
               fieldController: _controller.username,
               icon: const Icon(Icons.person),
               type: TextInputType.text,
@@ -90,7 +90,7 @@ class RegisterScreen extends StatelessWidget {
               height: 8,
             ),
             LoginEditText(
-              hint: 'رمز عبور',
+              hint: 'Password',
               fieldController: _controller.password,
               icon: const Icon(Icons.lock),
               type: TextInputType.visiblePassword,
@@ -101,7 +101,7 @@ class RegisterScreen extends StatelessWidget {
               height: 8,
             ),
             LoginEditText(
-              hint: 'تکرار رمز عبور',
+              hint: '"Confirm password"',
               fieldController: _controller.confirmPassword,
               icon: const Icon(Icons.lock),
               type: TextInputType.visiblePassword,
@@ -112,7 +112,7 @@ class RegisterScreen extends StatelessWidget {
               height: 8,
             ),
             LoginEditText(
-              hint: 'آدرس ایمیل',
+              hint: 'Email address',
               fieldController: _controller.email,
               icon: const Icon(Icons.person),
               type: TextInputType.emailAddress,
@@ -123,7 +123,7 @@ class RegisterScreen extends StatelessWidget {
               height: 8,
             ),
             LoginEditText(
-              hint: 'شماره همراه',
+              hint: 'MobileNumber',
               fieldController: _controller.mobileNumber,
               icon: const Icon(Icons.person),
               type: TextInputType.phone,
@@ -134,7 +134,7 @@ class RegisterScreen extends StatelessWidget {
               height: 8,
             ),
             LoginEditText(
-              hint: 'تاریخ تولد',
+              hint: ' BirthDate',
               fieldController: _controller.birthDate,
               icon: const Icon(Icons.person),
               type: TextInputType.datetime,
@@ -150,14 +150,14 @@ class RegisterScreen extends StatelessWidget {
                     ? LoadingAnimationWidget.beat(
                         color: CustomColors.foregroundColor, size: 35)
                     : LoginButton(
-                        buttonTitle: 'ثبت نام',
+                        buttonTitle: 'Sign up ',
                         onClick: () {
                           _controller.signUpUser().then((value) {
                             if (value is DataSuccess) {
                               showTopSnackBar(
                                 Overlay.of(context),
                                 const CustomSnackBar.success(
-                                  message: "اطلاعات ذخیره شد",
+                                  message: "Information saved",
                                 ),
                               );
                             } else {
@@ -179,7 +179,7 @@ class RegisterScreen extends StatelessWidget {
                 onPressed: () {
                   Get.offAllNamed(PagesRoutes.login);
                 },
-                child: const Text('قبلا ثبت نام کرده اید؟ | ورود', style: TextStyle(fontSize: 14))),
+                child: const Text('Already registered? | Login', style: TextStyle(fontSize: 14))),
             const SizedBox(
               height: 60,
             ),

@@ -48,7 +48,7 @@ class BoardSettingScreen extends StatelessWidget {
         appBar: CustomAppBar(
           height: width > 600 ? 150 : 150,
           titleWidget: const Text(
-            'تنظیمات برد ها',
+            'Board Settings',
             style: AppStyles.appbarTitleStyle,
           ),
         ),
@@ -66,8 +66,8 @@ class BoardSettingScreen extends StatelessWidget {
                           : item.parentBoard.toString(),
                       onDeleteClicked: () {
                         questionDialog(
-                            title: 'حذف برد',
-                            question: 'آیا مطمئن هستید؟',
+                            title: 'Delete Board',
+                            question: 'Are you sure?',
                             onYesClicked: () {
                               if (item.id != null) {
                                 _controller
@@ -79,7 +79,7 @@ class BoardSettingScreen extends StatelessWidget {
                                       Overlay.of(context),
                                       CustomSnackBar.success(
                                         message: value.data ??
-                                            'اطلاعات با موفقیت حذف شد',
+                                            'Data successfully deleted',
                                       ),
                                     );
                                   } else {
@@ -87,7 +87,7 @@ class BoardSettingScreen extends StatelessWidget {
                                       Overlay.of(context),
                                       CustomSnackBar.error(
                                         message: value.error ??
-                                            'خطا در ارسال اطلاعات',
+                                            'Error sending data',
                                       ),
                                     );
                                   }

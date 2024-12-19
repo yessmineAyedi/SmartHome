@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
           child: Align(
               alignment: Alignment.topRight,
               child: Text(
-                'اتاق ها',
+                'Rooms',
                 style: AppStyles.style2,
               )),
         ),
@@ -88,7 +88,7 @@ class HomePage extends StatelessWidget {
                                   height: 8,
                                 ),
                                 const Text(
-                                  'افزودن اتاق جدید',
+                                  'Add new room',
                                   style: AppStyles.style1,
                                 )
                               ],
@@ -135,7 +135,7 @@ class HomePage extends StatelessWidget {
                               IconButton(
                                   onPressed: () {
                                     Get.defaultDialog(
-                                        title: 'انتخاب کنید',
+                                        title: 'Select',
                                         content: ModificationDialogContent(
                                           index: index,
                                         ));
@@ -165,7 +165,7 @@ class HomePage extends StatelessWidget {
           child: Align(
               alignment: Alignment.centerRight,
               child: Text(
-                'وسیله ها',
+                'Devices',
                 style: AppStyles.style2,
               )),
         ),

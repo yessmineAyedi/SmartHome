@@ -34,7 +34,7 @@ Future<void> questionDialog({
           height: 50,
           alignment: Alignment.center,
           child: const Text(
-            "بله",
+            "Yes",
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,
@@ -58,7 +58,7 @@ Future<void> questionDialog({
           height: 50,
           alignment: Alignment.center,
           child: const Text(
-            "خیر",
+            "No",
             style: TextStyle(
               color: Colors.white,
               fontSize: 18,

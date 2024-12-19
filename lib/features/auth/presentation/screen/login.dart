@@ -72,14 +72,14 @@ class LoginScreen extends StatelessWidget {
               height: 12,
             ),
             const Text(
-              'ورود به برنامه',
+              'Login to the app',
               style: TextStyle(fontFamily: 'BoldTitle', fontSize: 28),
             ),
             const SizedBox(
               height: 20,
             ),
             LoginEditText(
-              hint: 'نام کاربری',
+              hint: 'Username',
               fieldController: _controller.loginUsername,
               icon: const Icon(Icons.person),
               type: TextInputType.text,
@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
               height: 8,
             ),
             LoginEditText(
-              hint: 'رمز عبور',
+              hint: 'Password ',
               fieldController: _controller.loginPassword,
               icon: const Icon(Icons.lock),
               type: TextInputType.visiblePassword,
@@ -113,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                         Overlay.of(context),
                         const CustomSnackBar.success(
                           message:
-                          "خوش آمدید!",
+                          "Welcome!",
                         ),
                       );
                     } else {
@@ -135,7 +135,7 @@ class LoginScreen extends StatelessWidget {
 
             TextButton(onPressed: () {
               Get.offAllNamed(PagesRoutes.register);
-            }, child: const Text('حساب کاربری ندارید؟ | ثبت نام', style: TextStyle(fontSize: 14),)),
+            }, child: const Text('Dont have a username? | Sign up', style: TextStyle(fontSize: 14),)),
 
             const SizedBox(
               height: 60,

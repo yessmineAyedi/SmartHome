@@ -55,7 +55,7 @@ class MqttReceiver extends GetxController {
         return const DataFailed('err');
       }
     } else {
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please ensure your internet connection!');
     }
   }
 }

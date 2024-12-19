@@ -42,24 +42,24 @@ class RoomController extends GetxController {
           if (dataState.data != null) {
             getAllRooms(GetStorage().read(AppUtils.projectIdConst));
             //roomsList.add(dataState.data);
-            roomName.text = '';
+            roomName.text = 'information saved successfully';
             isLoading.value = false;
-            return const DataSuccess('اطلاعات با موفقیت ذخیره شد');
+            return const DataSuccess('');
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'Error in sending data');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending data');
         }
       } else {
         isLoading.value = false;
-        return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+        return const DataFailed('Please enter all the information');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
   }
 
@@ -107,7 +107,7 @@ class RoomController extends GetxController {
         return const DataFailed('err');
       }
     } else {
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please ensure your internet connection!');
     }
   }
 
@@ -122,22 +122,22 @@ class RoomController extends GetxController {
             getAllRooms(projectId);
             roomName.text = '';
             isLoading.value = false;
-            return const DataSuccess('اطلاعات با موفقیت ویرایش شد');
+            return const DataSuccess('Information edited successfully');
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'Error in sending data');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending data');
         }
       } else {
         isLoading.value = false;
-        return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+        return const DataFailed('Please enter all the information');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
   }
 
@@ -147,14 +147,14 @@ class RoomController extends GetxController {
       DataState dataState = await _useCase.deleteRoomById(id, projectId);
       if (dataState is DataSuccess) {
         getAllRooms(projectId);
-        return const DataSuccess('اتاق با موفقیت حذف شد');
+        return const DataSuccess('The room has been successfully deleted');
       } else {
         isDeleteLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending data');
       }
     } else {
       isDeleteLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed(' Please ensure your internet connection ');
     }
   }
 

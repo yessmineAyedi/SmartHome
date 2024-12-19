@@ -37,7 +37,7 @@ class ChooseHardwareScenarioScreen extends StatelessWidget {
       appBar: CustomAppBar(
         height: 150,
         titleWidget: const Text(
-          'سناریوی سخت افزاری',
+          'Hardware Scenario',
           style: AppStyles.appbarTitleStyle,
         ),
       ),
@@ -55,12 +55,12 @@ class ChooseHardwareScenarioScreen extends StatelessWidget {
                             child: Column(
                               children: [
                                 CustomDropDown(
-                                    items: const ['روشن', 'خاموش'],
-                                    title: 'نوع سناریو',
+                                    items: const ['on', 'off'],
+                                    title: 'Type of Scenario',
                                     width: width,
                                     height: height / 12,
                                     onPressed: (value) {
-                                      if (value == 'روشن') {
+                                      if (value == 'on') {
                                         if (_hardwareController.isHardwareScenario.value) {
                                           _hardwareController.scenarioOnOff = '1';
                                         } else {
@@ -130,14 +130,14 @@ class ChooseHardwareScenarioScreen extends StatelessWidget {
         showTopSnackBar(
           Overlay.of(context),
           const CustomSnackBar.success(
-            message: 'اطلاعات با موفقیت ذخیره شد',
+            message: 'Information was successfully saved',
           ),
         );
       } else {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(
-            message: value.error ?? 'خطا در ارسال اطلاعات',
+            message: value.error ?? 'Error in sending information',
           ),
         );
       }

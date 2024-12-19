@@ -83,7 +83,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ) : Padding(
                   padding:const EdgeInsets.symmetric(horizontal: 12),
                   child: IconButton(onPressed: (){
-                    questionDialog(title: 'خروج از حساب کاربری', question: 'آیا میخواهید از حساب کاربری خود خارج شوید؟', onYesClicked: () {
+                    questionDialog(title: 'Log out', question: 'Do you want to log out of your account?', onYesClicked: () {
                       GetStorage().remove(AppUtils.userTokenAccess);
                       GetStorage().remove(AppUtils.userTokenRefresh);
                       GetStorage().remove(AppUtils.username);

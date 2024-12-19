@@ -25,7 +25,7 @@ class SpecialScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       appBar: CustomAppBar(
         height: 150,
-        titleWidget: const Text('شرایط خاص', style: AppStyles.appbarTitleStyle,),
+        titleWidget: const Text('Special conditions', style: AppStyles.appbarTitleStyle,),
       ),
       body: SafeArea(
         child: Center(

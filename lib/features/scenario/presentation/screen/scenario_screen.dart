@@ -40,7 +40,7 @@ class ScenarioScreen extends StatelessWidget {
       appBar: CustomAppBar(
         height: 150,
         titleWidget: const Text(
-          'سناریو ها',
+          'Scenarios',
           style: AppStyles.appbarTitleStyle,
         ),
       ),
@@ -53,11 +53,11 @@ class ScenarioScreen extends StatelessWidget {
               children: [
                 CustomDropDown(
                     items: AppUtils.scenarioTypeList,
-                    title: 'نوع سناریو',
+                    title: 'Scenario Type',
                     width: width > 600 ? width/2 : width,
                     height: height / 12,
                     onPressed: (value) {
-                      if (value == 'پنل دیواری') {
+                      if (value == 'Wall Panel') {
                         _controller.isHardwareScenario.value = true;
                       } else {
                         _controller.isHardwareScenario.value = false;

@@ -38,7 +38,6 @@ class ProjectBoardController extends GetxController {
   String? selectedSmsControlBoard;
   String? selectedWifiControlBoard;
 
-
   String? selectedBoardType;
   String? boardType;
 
@@ -81,20 +80,20 @@ class ProjectBoardController extends GetxController {
             return DataSuccess(dataState.data);
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'Error in sending information');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending information');
         }
       } else {
         isLoading.value = false;
         return const DataFailed(
-            'لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+            'Please ensure your internet connection');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا اطلاعات لازم را وارد نمایید');
+      return const DataFailed('Please enter the required information');
     }
   }
 
@@ -119,7 +118,7 @@ class ProjectBoardController extends GetxController {
         return const DataFailed('err');
       }
     } else {
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please check your internet connection!');
     }
   }
 
@@ -142,23 +141,23 @@ class ProjectBoardController extends GetxController {
             makeCreatePageFieldsClean();
             pagingController.refresh();
             isLoading.value = false;
-            return const DataSuccess('اطلاعات با موفقیت ویرایش شد');
+            return const DataSuccess('Information was successfully edited');
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'Error in sending information');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending information');
         }
       } else {
         isLoading.value = false;
         return const DataFailed(
-            'لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+            'Please ensure your internet connection');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا اطلاعات لازم را وارد نمایید');
+      return const DataFailed('Please enter the required information');
     }
   }
 
@@ -168,14 +167,14 @@ class ProjectBoardController extends GetxController {
       DataState dataState = await _useCase.deleteProjectBoardById(id);
       if (dataState is DataSuccess) {
         pagingController.refresh();
-        return const DataSuccess('برد با موفقیت حذف شد');
+        return const DataSuccess('Board was successfully deleted');
       } else {
         isDeleteLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending information');
       }
     } else {
       isDeleteLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
   }
 
@@ -198,7 +197,7 @@ class ProjectBoardController extends GetxController {
         return const DataFailed('err');
       }
     } else {
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please ensure your internet connection!');
     }
   }
 
@@ -213,11 +212,11 @@ class ProjectBoardController extends GetxController {
         return const DataSuccess('success');
       } else {
         isLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending information');
       }
     } else {
       isLoading.value = false;
-      return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+      return DataFailed(dataState.error ?? 'Error in sending information');
     }
   }
 

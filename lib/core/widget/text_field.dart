@@ -67,7 +67,7 @@ class _TextFieldBoxState extends State<TextFieldBox> {
             maxLines: widget.maxLine,
             // initialValue: value,
             decoration: InputDecoration(
-              hintText: widget.value.isEmpty ? 'اینجا بنویسید' : widget.value,
+              hintText: widget.value.isEmpty ? 'Write here' : widget.value,
               hintStyle: TextStyle(
                 color: widget.disable ? Colors.white : Colors.grey,
                 fontSize: 14,

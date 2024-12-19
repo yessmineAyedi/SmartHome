@@ -37,7 +37,7 @@ class SoftwareScenarioController extends BaseScenarioController {
     isRelayLoading.value = true;
     if (!Get.find<InternetController>().isConnected.value) {
       isRelayLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed(' Please ensure your internet connection is stable!');
     }
     DataState<List<RelayEntity>> dataState =
         await _useCase.getAllRelays(GetStorage().read(AppUtils.projectIdConst), '0');
@@ -57,7 +57,7 @@ class SoftwareScenarioController extends BaseScenarioController {
     isScenarioLoading.value = true;
     if (!Get.find<InternetController>().isConnected.value) {
       isScenarioLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please check your internet connection.!');
     }
     DataState<List<SoftwareScenarioEntity>> dataState = await _useCase.getSoftwareScenario(projectId);
     if (dataState is DataSuccess) {
@@ -76,13 +76,13 @@ class SoftwareScenarioController extends BaseScenarioController {
     isLoading.value = true;
     if (!Get.find<InternetController>().isConnected.value) {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please check your internet connection.');
     }
     addNewData();
     print(scenarioData);
     if (scenarioData == {} || scenarioName.text.isEmpty || deviceList.isEmpty || scenarioOnOff == null) {
       isLoading.value = false;
-      return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+      return const DataFailed('Please enter all the information');
     }
     DataState dataState = await _useCase.addNewSoftwareScenario(scenarioData!);
     if (dataState is DataSuccess) {
@@ -94,18 +94,18 @@ class SoftwareScenarioController extends BaseScenarioController {
         return DataSuccess(dataState.data);
       } else {
         isLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending information');
       }
     } else {
       isLoading.value = false;
-      return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+      return DataFailed(dataState.error ?? 'Error in sending information');
     }
   }
 
   Future<DataState<Map<String, dynamic>>> getSoftwareScenarioMessage(int scenarioId) async {
     if (!Get.find<InternetController>().isConnected.value) {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
     DataState<SoftwareMessageEntity> dataState = await _useCase.getSoftwareScenarioMessage(scenarioId);
     if (dataState is DataSuccess) {
@@ -144,7 +144,7 @@ class SoftwareScenarioController extends BaseScenarioController {
       }
     } else {
       isDeleteLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
   }
 

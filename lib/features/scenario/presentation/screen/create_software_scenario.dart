@@ -58,19 +58,19 @@ class ChooseSoftwareScenarioScreen extends StatelessWidget {
                             child: Column(
                               children: [
                                 TextFieldBox(
-                                  title: 'نام سناریو',
+                                  title: 'Scenario Name',
                                   height: height / 12,
                                   controller: _hardwareController.isHardwareScenario.value
                                       ? _hardwareController.scenarioName
                                       : _softwareController.scenarioName,
                                 ),
                                 CustomDropDown(
-                                    items: const ['روشن', 'خاموش'],
-                                    title: 'نوع سناریو',
+                                    items: const ['on', 'off'],
+                                    title: 'Type of Scenario',
                                     width: width,
                                     height: height / 12,
                                     onPressed: (value) {
-                                      if (value == 'روشن') {
+                                      if (value == 'on') {
                                         if (_hardwareController.isHardwareScenario.value) {
                                           _hardwareController.scenarioOnOff = '1';
                                         } else {
@@ -142,14 +142,14 @@ class ChooseSoftwareScenarioScreen extends StatelessWidget {
             showTopSnackBar(
               Overlay.of(context),
               const CustomSnackBar.success(
-                message: 'سناریو با موفقیت فعال شد',
+                message: 'The scenario was successfully activated',
               ),
             );
           } else {
             showTopSnackBar(
               Overlay.of(context),
               CustomSnackBar.error(
-                message: value.error ?? 'خطا در ارسال اطلاعات',
+                message: value.error ?? 'Error in sending information',
               ),
             );
           }
@@ -158,14 +158,14 @@ class ChooseSoftwareScenarioScreen extends StatelessWidget {
         showTopSnackBar(
           Overlay.of(context),
           const CustomSnackBar.success(
-            message: 'اطلاعات با موفقیت ذخیره شد',
+            message: 'The information was successfully saved',
           ),
         );
       } else {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(
-            message: value.error ?? 'خطا در ارسال اطلاعات',
+            message: value.error ?? 'Error in sending information',
           ),
         );
       }

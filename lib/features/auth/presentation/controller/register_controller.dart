@@ -47,7 +47,7 @@ class RegisterController extends GetxController {
           confirmPassword.text.isEmpty ||
           mobileNumber.text.isEmpty) {
         isRegisterLoading.value = false;
-        return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+        return const DataFailed('Please enter all the information');
       }
         if (password.text == confirmPassword.text) {
           if (mobileNumber.text.length == 11 &&
@@ -64,22 +64,22 @@ class RegisterController extends GetxController {
               email.text = '';
               mobileNumber.text = '';
               birthDate.text = '';
-              return const DataSuccess('اطلاعات با موفقیت ذخیره شد');
+              return const DataSuccess('Information saved successfully');
             } else {
               isRegisterLoading.value = false;
-              return DataFailed(errorConvertor(response.error ?? 'خطا در ارسال اطلاعات'));
+              return DataFailed(errorConvertor(response.error ?? 'Error in sending data'));
             }
           } else {
             isRegisterLoading.value = false;
-            return const DataFailed('لطفا شماره موبایل را با فرمت مناسب وارد کنید');
+            return const DataFailed('Please enter the mobile number in the correct format');
           }
         } else {
           isRegisterLoading.value = false;
-          return const DataFailed('رمز عبور با تکرار آن مطابقت ندارد!');
+          return const DataFailed('The password does not match the confirmation password!');
         }
 
     } else {
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection!');
     }
   }
 
@@ -100,18 +100,18 @@ class RegisterController extends GetxController {
             isLoading.value = false;
             return DataSuccess(dataState.data);
           }
-          return const DataFailed('خطا در دریافت اطلاعات');
+          return const DataFailed('Error in retrieving data');
         } else {
           isLoading.value = false;
           return DataFailed(errorConvertor(dataState.error!));
         }
       }else{
         isLoading.value = false;
-        return const DataFailed('لطفا ابتدا فیلد های خالی را تکمیل نمایید');
+        return const DataFailed('Please fill in the empty fields first');
       }
     }else{
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
 
   }

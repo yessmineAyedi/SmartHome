@@ -34,7 +34,7 @@ class ModificationDialogContent extends StatelessWidget {
               IconButton(
                   onPressed: () {
                     Get.back();
-                    askDialog('حذف اتاق', 'آیا مطمئن هستید؟', () {
+                    askDialog('Delete room', 'Are you sure?', () {
                       if (_controller.roomsList[index].id != null) {
                         _controller
                             .deleteRoom(_controller.roomsList[index].id!,
@@ -44,14 +44,14 @@ class ModificationDialogContent extends StatelessWidget {
                             showTopSnackBar(
                               overlay,
                               CustomSnackBar.success(
-                                message: value.data ?? 'اطلاعات با موفقیت حذف شد',
+                                message: value.data ?? 'Information has been successfully deleted',
                               ),
                             );
                           } else {
                             showTopSnackBar(
                               overlay,
                               CustomSnackBar.error(
-                                message: value.error ?? 'خطا در ارسال اطلاعات',
+                                message: value.error ?? 'Error in sending information',
                               ),
                             );
                           }
@@ -86,7 +86,7 @@ class ModificationDialogContent extends StatelessWidget {
                     color: CustomColors.foregroundColor,
                   )),
               const Text(
-                'ویرایش',
+                'Edit',
               )
             ],
           ),

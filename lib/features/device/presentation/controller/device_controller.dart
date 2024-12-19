@@ -55,22 +55,22 @@ class DeviceController extends GetxController {
             getAllDevises();
             deviceName.text = '';
             isLoading.value = false;
-            return const DataSuccess('اطلاعات با موفقیت ذخیره شد');
+            return const DataSuccess('Information saved successfully');
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'error in sending data');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending data');
         }
       } else {
         isLoading.value = false;
-        return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+        return const DataFailed('Please enter all the information');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
   }
 
@@ -101,7 +101,7 @@ class DeviceController extends GetxController {
       }
     } else {
       isGetNodesLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please ensure your internet connection!');
     }
   }
 
@@ -143,14 +143,14 @@ class DeviceController extends GetxController {
       DataState dataState = await _useCase.deleteDevice(id, GetStorage().read(AppUtils.projectIdConst), roomId!);
       if (dataState is DataSuccess) {
         getAllDevises();
-        return const DataSuccess('تجهیز با موفقیت حذف شد');
+        return const DataSuccess('The equipment has been successfully deleted');
       } else {
         isDeleteDeviceLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending data');
       }
     } else {
       isDeleteDeviceLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection');
     }
   }
 

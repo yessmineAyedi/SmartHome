@@ -50,7 +50,7 @@ class HardwareScenarioWidget extends StatelessWidget {
                       Get.toNamed(PagesRoutes.chooseHardwareScenario);
                     },
                     onLongClick: () {
-                      askDialog('حذف سناریو', 'آیا میخواهید سناریو را حذف کنید؟', () {
+                      askDialog('Delete scenario', 'Do you want to delete the scenario?', () {
                         _controller.deleteHardwareScenario((pannelScenarioNumberList[index]).toString()).then((value) {
                           if (value is DataSuccess) {
 
@@ -68,14 +68,14 @@ class HardwareScenarioWidget extends StatelessWidget {
                             showTopSnackBar(
                               Overlay.of(context),
                               CustomSnackBar.success(
-                                message: value.data ?? 'اطلاعات با موفقیت حذف شد',
+                                message: value.data ?? 'The information was successfully deleted',
                               ),
                             );
                           } else {
                             showTopSnackBar(
                               Overlay.of(context),
                               CustomSnackBar.error(
-                                message: value.error ?? 'خطا در ارسال اطلاعات',
+                                message: value.error ?? 'Error in sending information',
                               ),
                             );
                           }

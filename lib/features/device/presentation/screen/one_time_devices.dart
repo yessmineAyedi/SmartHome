@@ -28,7 +28,7 @@ class OneTimeDeviceScreen extends StatelessWidget {
       appBar: CustomAppBar(
         height: width > 600 ? 150 : 150,
         titleWidget: const Text(
-          'کلید ها',
+          'Keys',
           style: AppStyles.appbarTitleStyle,
         ),
       ),
@@ -59,7 +59,7 @@ class OneTimeDeviceScreen extends StatelessWidget {
                         color: CustomColors.foregroundColor,
                       ),
                       const Text(
-                        'کلیدهای تک تایمر',
+                        'Single-timer switches',
                         style: AppStyles.style1,
                       ),
                       SvgPicture.asset(

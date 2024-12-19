@@ -44,7 +44,7 @@ class _RelayThreeTimeWidgetState extends State<RelayThreeTimeWidget> {
               color: CustomColors.foregroundColor,
             ),
             const Text(
-              'کلید سه تایمر',
+              'Three-timer switch',
               style: AppStyles.style1,
             ),
             SvgPicture.asset(
@@ -111,7 +111,7 @@ class _RelayThreeTimeWidgetState extends State<RelayThreeTimeWidget> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text('زمان های فعال'),
+                              const Text('Activation times'),
                               Icon(
                                 Icons.expand_more,
                                 color: CustomColors.foregroundColor,

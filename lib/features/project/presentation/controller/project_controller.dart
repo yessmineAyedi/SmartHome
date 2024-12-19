@@ -45,22 +45,22 @@ class ProjectController extends GetxController {
             projectList.add(dataState.data);
             projectName.text = '';
             projectAddress.text = '';
-            return const DataSuccess('اطلاعات با موفقیت ذخیره شد');
+            return const DataSuccess('Information has been successfully saved');
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'Error in sending information');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending information');
         }
       } else {
         isLoading.value = false;
-        return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+        return const DataFailed('Please enter all the information');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection is stable');
     }
   }
 
@@ -101,22 +101,22 @@ class ProjectController extends GetxController {
             projectName.text = '';
             projectAddress.text = '';
             isLoading.value = false;
-            return const DataSuccess('اطلاعات با موفقیت ذخیره شد');
+            return const DataSuccess('Information has been successfully saved');
           } else {
             isLoading.value = false;
-            return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+            return DataFailed(dataState.error ?? 'Error in sending information');
           }
         } else {
           isLoading.value = false;
-          return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+          return DataFailed(dataState.error ?? 'Error in sending information');
         }
       } else {
         isLoading.value = false;
-        return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+        return const DataFailed('Please enter all the information');
       }
     } else {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection is stable');
     }
   }
 
@@ -126,14 +126,14 @@ class ProjectController extends GetxController {
       DataState dataState = await _useCase.deleteProjectById(id);
       if (dataState is DataSuccess) {
         getAllProjects();
-        return const DataSuccess('پروژه با موفقیت حذف شد');
+        return const DataSuccess('The project has been successfully deleted');
       } else {
         isDeleteLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending information');
       }
     } else {
       isDeleteLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please check your internet connection');
     }
   }
 

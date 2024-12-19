@@ -94,15 +94,15 @@ class DeviceListScreen extends StatelessWidget {
                                     title: _controller.deviceList[index].name,
                                     onLongPress: () {
                                       questionDialog(
-                                          title: 'حذف تجهیز',
-                                          question: 'آیا میخواهید این تجهز را حذف کنید؟',
+                                          title: 'Delete equipment',
+                                          question: 'Do you want to delete this equipment?',
                                           onYesClicked: () {
                                             _controller.deleteDevice(_controller.deviceList[index].id!).then((value) {
                                               if (value is DataSuccess) {
                                                 Get.back();
-                                                const CustomSnackBar.success(message: 'تجهیز با موفقیت حذف شد!');
+                                                const CustomSnackBar.success(message: 'Equipment successfully deleted!');
                                               } else {
-                                                const CustomSnackBar.error(message: 'خطا در ارسال اطلاعات');
+                                                const CustomSnackBar.error(message: 'Error in sending data');
                                               }
                                             });
                                           });
@@ -114,15 +114,15 @@ class DeviceListScreen extends StatelessWidget {
                                     type: _controller.deviceList[index].deviceType.toString(),
                                     onLongPress: () {
                                       questionDialog(
-                                          title: 'حذف تجهیز',
-                                          question: 'آیا میخواهید این تجهز را حذف کنید؟',
+                                          title: 'Delete equipment',
+                                          question: 'Do you want to delete this equipment?',
                                           onYesClicked: () {
                                             _controller.deleteDevice(_controller.deviceList[index].id!).then((value) {
                                               if (value is DataSuccess) {
                                                 Get.back();
-                                                const CustomSnackBar.success(message: 'تجهیز با موفقیت حذف شد!');
+                                                const CustomSnackBar.success(message: 'Equipment successfully deleted!');
                                               } else {
-                                                const CustomSnackBar.error(message: 'خطا در ارسال اطلاعات');
+                                                const CustomSnackBar.error(message: 'Error in sending data');
                                               }
                                             });
                                           });

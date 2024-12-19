@@ -84,7 +84,7 @@ class RelayOneTimeWidget extends StatelessWidget {
               color: CustomColors.foregroundColor,
             ),
             const Text(
-              'کلید تک تایمر',
+              'Single-timer switch',
               style: AppStyles.style1,
             ),
             SvgPicture.asset(
@@ -180,7 +180,7 @@ class RelayOneTimeWidget extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text('زمان های فعال'),
+                                const Text('Active times'),
                                 Icon(
                                   !isItemExpanded.value ? Icons.expand_more : Icons.expand_less,
                                   color: CustomColors.foregroundColor,

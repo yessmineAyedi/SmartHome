@@ -29,7 +29,7 @@ class HardwareScenarioController extends BaseScenarioController {
     isScenarioLoading.value = true;
     if (!Get.find<InternetController>().isConnected.value) {
       isScenarioLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید!');
+      return const DataFailed('Please ensure your internet connection is stable!');
     }
     DataState<List<HardwareScenarioEntity>> dataState = await _useCase.getHardwareScenario(projectId, type);
     if (dataState is DataSuccess) {
@@ -48,13 +48,13 @@ class HardwareScenarioController extends BaseScenarioController {
     isLoading.value = true;
     if (!Get.find<InternetController>().isConnected.value) {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please check your internet connection');
     }
     addNewData();
 
     if (scenarioData == {} || deviceList.isEmpty || scenarioOnOff == null) {
       isLoading.value = false;
-      return const DataFailed('لطفا تمام اطلاعات را وارد نمایید');
+      return const DataFailed('Please enter all the information');
     }
     DataState dataState = await _useCase.addNewHardwareScenario(scenarioData!);
     if (dataState is DataSuccess) {
@@ -66,11 +66,11 @@ class HardwareScenarioController extends BaseScenarioController {
         return DataSuccess(dataState.data);
       } else {
         isLoading.value = false;
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? 'Error in sending information');
       }
     } else {
       isLoading.value = false;
-      return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+      return DataFailed(dataState.error ?? ' Error in sending information');
     }
   }
 
@@ -80,22 +80,22 @@ class HardwareScenarioController extends BaseScenarioController {
       DataState dataState = await _useCase.deleteHardwareScenario(projectId, type);
       if (dataState is DataSuccess) {
         isDeleteLoading.value = false;
-        return const DataSuccess('سناریو با موفقیت حذف شد');
+        return const DataSuccess('The scenario has been successfully deleted');
       } else {
         isDeleteLoading.value = false;
         print(dataState.error);
-        return DataFailed(dataState.error ?? 'خطا در ارسال اطلاعات');
+        return DataFailed(dataState.error ?? ' Error in sending information');
       }
     } else {
       isDeleteLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection is stable');
     }
   }
 
   Future<DataState<Map<String, dynamic>>> getHardwareScenarioMessage(int scenarioId) async {
     if (!Get.find<InternetController>().isConnected.value) {
       isLoading.value = false;
-      return const DataFailed('لطفا از اتصال اینترنت خود اطمینان حاصل نمایید');
+      return const DataFailed('Please ensure your internet connection is stable');
     }
 
     DataState<HardwareScenarioMessageEntity> dataState =

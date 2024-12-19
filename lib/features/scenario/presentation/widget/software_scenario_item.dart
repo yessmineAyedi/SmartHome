@@ -29,7 +29,7 @@ class SoftwareScenarioItem extends StatelessWidget {
     return InkWell(
       onTap: onItemClicked,
       onLongPress: () {
-        askDialog('حذف سناریو', 'آیا میخواهید سناریو را حذف کنید؟', () {
+        askDialog('Delete scenario', 'Do you want to delete the scenario?', () {
           Get.find<SoftwareScenarioController>()
               .deleteSoftwareScenario(
               Get.find<SoftwareScenarioController>()
@@ -55,7 +55,7 @@ class SoftwareScenarioItem extends StatelessWidget {
                 Overlay.of(context),
                 CustomSnackBar.success(
                   message: value.data ??
-                      'اطلاعات با موفقیت حذف شد',
+                      'The information was successfully deleted',
                 ),
               );
             } else {
@@ -63,7 +63,7 @@ class SoftwareScenarioItem extends StatelessWidget {
                 Overlay.of(context),
                 CustomSnackBar.error(
                   message:
-                  value.error ?? 'خطا در ارسال اطلاعات',
+                  value.error ?? 'Error in sending information',
                 ),
               );
             }
@@ -119,7 +119,7 @@ class SoftwareScenarioItem extends StatelessWidget {
                 ),
                 Text(_softwareController.scenarioList[index]
                     .name ??
-                    'تعریف نشده')
+                    'Undefined')
               ],
             ),
           )),

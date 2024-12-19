@@ -7,7 +7,7 @@ class LoginButton extends StatelessWidget {
   String buttonTitle;
 
   LoginButton({
-    this.buttonTitle = 'ورود',
+    this.buttonTitle = 'Login',
     required this.onClick,
     Key? key,
   }) : super(key: key);

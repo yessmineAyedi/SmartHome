@@ -32,7 +32,7 @@ class CreateRoomScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextFieldBox(
-                title: 'نام اتاق',
+                title: 'Room name',
                 height: width > 600 ? height/6 : height / 12,
                 controller: Get.find<RoomController>().roomName,
               ),
@@ -51,14 +51,14 @@ class CreateRoomScreen extends StatelessWidget {
                             Overlay.of(context),
                             CustomSnackBar.success(
                               message:
-                                  value.data ?? 'اطلاعات با موفقیت ویرایش شد',
+                                  value.data ?? 'Information edited successfully',
                             ),
                           );
                         } else {
                           showTopSnackBar(
                             Overlay.of(context),
                             CustomSnackBar.error(
-                              message: value.error ?? 'خطا در ارسال اطلاعات',
+                              message: value.error ?? 'Error in sending data',
                             ),
                           );
                         }
@@ -74,14 +74,14 @@ class CreateRoomScreen extends StatelessWidget {
                             Overlay.of(context),
                             CustomSnackBar.success(
                               message:
-                                  value.data ?? 'اطلاعات با موفقیت ذخیره شد',
+                                  value.data ?? 'Information saved successfully',
                             ),
                           );
                         } else {
                           showTopSnackBar(
                             Overlay.of(context),
                             CustomSnackBar.error(
-                              message: value.error ?? 'خطا در ارسال اطلاعات',
+                              message: value.error ?? 'Error in sending data',
                             ),
                           );
                         }

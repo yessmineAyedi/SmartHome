@@ -38,7 +38,7 @@ class PanelScreen extends StatelessWidget {
       appBar: CustomAppBar(
         height: 150,
         titleWidget: const Text(
-          'سناریو ها',
+          'Scenarios',
           style: AppStyles.appbarTitleStyle,
         ),
       ),
@@ -68,7 +68,7 @@ class PanelScreen extends StatelessWidget {
                         child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: Text(
-                        'لیست سناریو های پنل',
+                        'List of Panel Scenarios',
                         style: AppStyles.style6,
                       ),
                     )),
@@ -78,7 +78,7 @@ class PanelScreen extends StatelessWidget {
                               return SoftwareScenarioItem(
                                 index: index,
                                 onItemClicked: () {
-                                  askDialog('فعال کردن سناریو', 'آیا مطمئن هستید؟', () {
+                                  askDialog('Activate Scenario', 'Are you sure?', () {
                                     Get.back();
                                     _mqttController.publishMessage(
                                         {
@@ -93,7 +93,7 @@ class PanelScreen extends StatelessWidget {
                                     showTopSnackBar(
                                       Overlay.of(context),
                                       const CustomSnackBar.success(
-                                        message: 'سناریو با موفقیت فعال شد',
+                                        message: 'The scenario was successfully activated',
                                       ),
                                     );
                                   });

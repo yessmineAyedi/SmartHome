@@ -19,19 +19,15 @@ class CreateBoardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery
-        .sizeOf(context)
-        .width;
-    var height = MediaQuery
-        .sizeOf(context)
-        .height;
+    var width = MediaQuery.sizeOf(context).width;
+    var height = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
       backgroundColor: CustomColors.backgroundColor,
       appBar: CustomAppBar(
         height:  width > 600 ? 100 : 150,
         titleWidget: const Text(
-          'ثبت برد جدید',
+          'Create New Board',
           style: AppStyles.appbarTitleStyle,
         ),
       ),
@@ -44,10 +40,11 @@ class CreateBoardScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   TextFieldBox(
-                    title: 'نام برد',
-                    height: width > 600 ? height/6 : height / 12,
+                    title: 'Board Name',
+                    height: width > 600 ? height / 6 : height / 12,
                     fontSize: 14,
-                    controller: _controller.boardName,),
+                    controller: _controller.boardName,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -149,14 +146,14 @@ class CreateBoardScreen extends StatelessWidget {
                              showTopSnackBar(
                                Overlay.of(context),
                                const CustomSnackBar.success(
-                                 message: 'اطلاعات با موفقیت ذخیره شد',
+                                 message: 'Information saved successfully',
                                ),
                              );
                            } else {
                              showTopSnackBar(
                                Overlay.of(context),
                                CustomSnackBar.error(
-                                 message: value.error ?? 'خطا در ارسال اطلاعات',
+                                 message: value.error ?? 'Error sending data',
                                ),
                              );
                            }
@@ -165,7 +162,7 @@ class CreateBoardScreen extends StatelessWidget {
                          showTopSnackBar(
                            Overlay.of(context),
                            const CustomSnackBar.error(
-                             message: 'لطفا ابتدا برد کنترل کننده را انتخاب نمایید',
+                             message: 'Please select a control board first',
                            ),
                          );
                        }
@@ -176,14 +173,14 @@ class CreateBoardScreen extends StatelessWidget {
                            showTopSnackBar(
                              Overlay.of(context),
                              const CustomSnackBar.success(
-                               message: 'اطلاعات با موفقیت ذخیره شد',
+                               message: 'Information saved successfully',
                              ),
                            );
                          } else {
                            showTopSnackBar(
                              Overlay.of(context),
                              CustomSnackBar.error(
-                               message: value.error ?? 'خطا در ارسال اطلاعات',
+                               message: value.error ?? 'Error sending data',
                              ),
                            );
                          }
@@ -197,21 +194,21 @@ class CreateBoardScreen extends StatelessWidget {
                            Overlay.of(context),
                            CustomSnackBar.success(
                              message: value.data ??
-                                 'اطلاعات با موفقیت ویرایش شد',
+                                 'Information edited successfully',
                            ),
                          );
                        } else {
                          showTopSnackBar(
                            Overlay.of(context),
                            CustomSnackBar.error(
-                             message: value.error ?? 'خطا در ارسال اطلاعات',
+                             message: value.error ?? 'Error sending data',
                            ),
                          );
                        }
                      });
                    }
                   },
-                  buttonTitle: _controller.isInEditMode ? 'ویرایش' : 'ذخیره',
+                  buttonTitle: _controller.isInEditMode ? 'Edit' : 'Save',
                   loading: _controller.isLoading.value,
                 );
               }))

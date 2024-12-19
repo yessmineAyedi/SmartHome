@@ -18,7 +18,7 @@ takeDateTimeDialog(
   var minute = ''.obs;
   List<int> daysList = [];
   return Get.defaultDialog(
-      title: 'انتخاب زمان روشن',
+      title: 'Select turn-on time',
       titleStyle: AppStyles.style9,
       content: Container(
         height: MediaQuery.sizeOf(context).height / 2,
@@ -36,7 +36,7 @@ takeDateTimeDialog(
                   Obx(() {
                     return Text(
                       hour.value == '' && minute.value == ''
-                          ? 'انتخاب ساعت روشن'
+                          ? 'Select turn-on hour'
                           : '$hour:$minute',
                       style: AppStyles.style9,
                     );
@@ -79,7 +79,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'شنبه',
+                            'Saturday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(
@@ -102,7 +102,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'یکشنبه',
+                            'Sunday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(
@@ -127,7 +127,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'دوشنبه',
+                            'Monday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(
@@ -152,7 +152,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'سه شنبه',
+                            'Tuesday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(
@@ -177,7 +177,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'چهارشنبه',
+                            'Wednesday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(
@@ -202,7 +202,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'پنجشنبه',
+                            'Thursday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(
@@ -227,7 +227,7 @@ takeDateTimeDialog(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'جمعه',
+                            'Friday',
                             style: AppStyles.style8,
                           ),
                           RoundCheckBox(

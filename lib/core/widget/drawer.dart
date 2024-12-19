@@ -41,8 +41,8 @@ class MyDrawerWidget extends StatelessWidget {
                     ),
                     onPressed: () {
                       questionDialog(
-                          title: 'خروج از حساب کاربری',
-                          question: 'آیا میخواهید از حساب کاربری خود خارج شوید؟',
+                          title: 'Log out of account',
+                          question: 'Do you want to log out of your account?',
                           onYesClicked: () {
                             GetStorage().remove(AppUtils.userTokenAccess);
                             GetStorage().remove(AppUtils.userTokenRefresh);
@@ -95,14 +95,14 @@ class MyDrawerWidget extends StatelessWidget {
 
                             DrawerItemOption(
                                 icon: const Icon(Icons.signal_wifi_connected_no_internet_4),
-                                title: 'حالت آفلاین',
+                                title: 'Offline mode',
                                 onTap: () {
                                   // Get.toNamed(
                                   // RouteHelper.getLanguageRoute('menu'));
                                 }),
                             DrawerItem(
                                 icon: const Icon(Icons.language),
-                                title: 'زبان',
+                                title: 'Language',
                                 onTap: () {
                                   // Get.toNamed(
                                   // RouteHelper.getLanguageRoute('menu'));
@@ -110,13 +110,13 @@ class MyDrawerWidget extends StatelessWidget {
 
                             DrawerItem(
                                 icon: const Icon(Icons.settings),
-                                title: 'تنظیمات',
+                                title: 'Settings',
                                 onTap: () {
                                   //Get.toNamed(RouteHelper.getSettingRoute());
                                 }),
                             DrawerItem(
                                 icon: const Icon(Icons.developer_board),
-                                title: 'تنظیمات بردها',
+                                title: 'Boards settings',
                                 onTap: () {
                                   Get.back();
                                   Get.toNamed(PagesRoutes.boardSetting);
@@ -124,14 +124,14 @@ class MyDrawerWidget extends StatelessWidget {
 
                             DrawerItem(
                                 icon: const Icon(Icons.info),
-                                title: 'در مورد ما',
+                                title: '"About us"',
                                 onTap: () {
                                   //Todo Page about us...
                                 }),
 
                             DrawerItem(
                                 icon: const Icon(Icons.shopping_bag),
-                                title: 'فروشگاه',
+                                title: 'Store',
                                 onTap: () {
                                   //Todo Page store WebView
                                 }),

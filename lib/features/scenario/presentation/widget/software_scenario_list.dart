@@ -37,7 +37,7 @@ class SoftwareScenarioListWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        'لیست سناریو های نرم افزاری',
+                        'List of Software Scenarios',
                         style: AppStyles.style6,
                       ),
                       TextButton(
@@ -48,7 +48,7 @@ class SoftwareScenarioListWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              'افزودن',
+                              'Add',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
@@ -72,7 +72,7 @@ class SoftwareScenarioListWidget extends StatelessWidget {
                       return SoftwareScenarioItem(
                         index: index,
                         onItemClicked: () {
-                          askDialog('فعال کردن سناریو', 'آیا مطمئن هستید؟', () {
+                          askDialog('Activate Scenario', 'Are you sure?', () {
                             Get.back();
                             _mqttController.publishMessage(
                                 {
@@ -87,7 +87,7 @@ class SoftwareScenarioListWidget extends StatelessWidget {
                             showTopSnackBar(
                               Overlay.of(context),
                               const CustomSnackBar.success(
-                                message: 'سناریو با موفقیت فعال شد',
+                                message: 'The scenario was successfully activated',
                               ),
                             );
                           });

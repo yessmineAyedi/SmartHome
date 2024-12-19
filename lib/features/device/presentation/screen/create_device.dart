@@ -32,32 +32,32 @@ class CreateDeviceScreen extends StatelessWidget {
             SingleChildScrollView(
               child: Column(children: [
                 TextFieldBox(
-                  title: 'نام تجهیز',
+                  title: 'Equipment name',
                   height: width > 600 ? height/6 : height / 12,
                   controller: _controller.deviceName,
                 ),
                 CustomDropDown(
                     items: AppUtils.deviceTypeList,
-                    title: 'نوع تجهیز',
+                    title: 'Equipment type',
                     width: MediaQuery.sizeOf(context).width,
                     height: MediaQuery.sizeOf(context).height / 12,
                     onPressed: (value) {
-                      if (value.toString() == 'کلید سه تایمر') {
+                      if (value.toString() == 'Three-timer switch') {
                         _controller.deviceType = '6';
-                      } else if (value.toString() == 'کلید تک تایمر') {
+                      } else if (value.toString() == 'Single-timer switch') {
                         _controller.deviceType = '0';
-                      } else if (value.toString() == 'سنسور دما') {
+                      } else if (value.toString() == 'Temperature sensor') {
                         _controller.deviceType = '1';
-                      } else if (value.toString() == 'سنسور رطوبت') {
+                      } else if (value.toString() == 'Humidity sensor') {
                         _controller.deviceType = '2';
-                      } else if (value.toString() == 'سنسور گاز') {
+                      } else if (value.toString() == 'Gas sensor') {
                         _controller.deviceType = '3';
-                      } else if (value.toString() == 'سنسور خاک') {
+                      } else if (value.toString() == 'Soil sensor') {
                         _controller.deviceType = '4';
                       } else if (value.toString() ==
-                          'چشمی ها و سنسور های تشخیص حرکت') {
+                          'Motion detection eyes and sensors') {
                         _controller.deviceType = '7';
-                      } else if (value.toString() == 'دیمر') {
+                      } else if (value.toString() == 'Dimmer') {
                         _controller.deviceType = '5';
                       }
 
@@ -70,7 +70,7 @@ class CreateDeviceScreen extends StatelessWidget {
                   return CustomDropDown(
                       items: _controller.deviceNodeNames.value.keys.toList(),
                       isLoading: _controller.isGetNodesLoading.value,
-                      title: 'نود انتخابی در تابلو',
+                      title: 'Selectable node in the panel',
                       width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height / 12,
                       onPressed: (value) {
@@ -99,14 +99,14 @@ class CreateDeviceScreen extends StatelessWidget {
                         showTopSnackBar(
                           Overlay.of(context),
                           CustomSnackBar.success(
-                            message: value.data ?? 'اطلاعات با موفقیت ذخیره شد',
+                            message: value.data ?? 'Information saved successfully',
                           ),
                         );
                       } else {
                         showTopSnackBar(
                           Overlay.of(context),
                           CustomSnackBar.error(
-                            message: value.error ?? 'خطا در ارسال اطلاعات',
+                            message: value.error ?? 'Error in sending data',
                           ),
                         );
                       }

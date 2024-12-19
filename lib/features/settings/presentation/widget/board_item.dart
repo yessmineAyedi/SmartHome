@@ -81,7 +81,7 @@ class BoardItem extends StatelessWidget {
                 Obx(() {
                   return CustomDropDown(
                     items: _controller.smsBoardList.value.keys.toList(),
-                    title: 'برد پیامکی کنترل کننده',
+                    title: 'SMS Controller Board',
                     onPressed: (value) {
                       _controller.selectedSmsControlBoard = _controller
                           .smsBoardList.value[value.toString()]
@@ -97,7 +97,7 @@ class BoardItem extends StatelessWidget {
                 Obx(() {
                   return CustomDropDown(
                     items: _controller.wifiBoardList.value.keys.toList(),
-                    title: 'برد وای فای کنترل کننده',
+                    title: 'Wi-Fi Controller Board',
                     width: width,
                     height: height / 12,
                     onPressed: (value) {

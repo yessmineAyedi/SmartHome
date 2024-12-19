@@ -39,7 +39,7 @@ class ProjectScreen extends StatelessWidget {
               onPressed: () {
                 _controller.projectEditMode = false;
                 Get.defaultDialog(
-                    title: 'ایجاد پروژه',
+                    title: 'Create project',
                     content: Obx(() {
                       return CreateProjectDialog(
                         onSaveClicked: () {
@@ -48,7 +48,7 @@ class ProjectScreen extends StatelessWidget {
                               showTopSnackBar(
                                 overlay,
                                 const CustomSnackBar.success(
-                                  message: "اطلاعات ذخیره شد",
+                                  message: "Information saved",
                                 ),
                               );
                               Get.back();
@@ -99,7 +99,7 @@ class ProjectScreen extends StatelessWidget {
                           },
                           onLongClick: () {
                             Get.defaultDialog(
-                                title: 'انتخاب کنید',
+                                title: 'Select',
                                 content: Container(
                                   padding: const EdgeInsets.all(AppDimensions.mediumPadding),
                                   decoration: BoxDecoration(
@@ -113,7 +113,7 @@ class ProjectScreen extends StatelessWidget {
                                           IconButton(
                                               onPressed: () {
                                                 Get.back();
-                                                askDialog('حذف پروژه', 'آیا مطمئن هستید؟', () {
+                                                askDialog('Delete project', 'Are you sure?', () {
                                                   _controller
                                                       .deleteProject(_controller.projectList[index].id!)
                                                       .then((value) {
@@ -121,14 +121,14 @@ class ProjectScreen extends StatelessWidget {
                                                       showTopSnackBar(
                                                         overlay,
                                                         CustomSnackBar.success(
-                                                          message: value.data ?? 'اطلاعات با موفقیت حذف شد',
+                                                          message: value.data ?? 'Information has been successfully deleted',
                                                         ),
                                                       );
                                                     } else {
                                                       showTopSnackBar(
                                                         overlay,
                                                         CustomSnackBar.error(
-                                                          message: value.error ?? 'خطا در ارسال اطلاعات',
+                                                          message: value.error ?? 'Error in sending information',
                                                         ),
                                                       );
                                                     }
@@ -155,7 +155,7 @@ class ProjectScreen extends StatelessWidget {
                                                 _controller.projectEditMode = true;
                                                 Get.back();
                                                 Get.defaultDialog(
-                                                    title: 'ویرایش پروژه',
+                                                    title: 'Edit project',
                                                     content: Obx(() {
                                                       return CreateProjectDialog(
                                                         onSaveClicked: () {
@@ -166,7 +166,7 @@ class ProjectScreen extends StatelessWidget {
                                                               showTopSnackBar(
                                                                 overlay,
                                                                 const CustomSnackBar.success(
-                                                                  message: "اطلاعات ذخیره شد",
+                                                                  message: "Information saved",
                                                                 ),
                                                               );
                                                               Get.back();
@@ -189,7 +189,7 @@ class ProjectScreen extends StatelessWidget {
                                                 color: CustomColors.foregroundColor,
                                               )),
                                           const Text(
-                                            'ویرایش',
+                                            'Edit',
                                           )
                                         ],
                                       ),
